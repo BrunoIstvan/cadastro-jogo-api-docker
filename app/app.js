@@ -19,7 +19,7 @@ mongo.connect(mongoaddr);
 var gameSchema = mongo.Schema({
 	nome : { type: String }, 
 	anoLancamento : { type: Number }, 
-	plataformas : { nomePlataforma: [ { type: String } ] }, 
+	plataformas : [ { nomePlataforma: { type: String } } ], 
 	descricao : { type: String }, 
 	urlImage: { type: String }, 
 	updated_at: { type: Date, default: Date.now },
@@ -65,7 +65,7 @@ app.post("/api/jogo", function (req, res) {
 		'anoLancamento' : req.body.anoLancamento,
 		'descricao' : req.body.descricao,
 		'urlImage' : req.body.urlImage,
-		'plataformas' : req.body.plataformas
+		'plataformas' : req.body.plataformas 
 	});
 	register.save(function (err) {
 		if (err) { console.log(err); res.send(err); res.end(); }
