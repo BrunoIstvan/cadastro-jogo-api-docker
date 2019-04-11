@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 //Conexão com o MongoDB
-var mongoaddr = 'mongodb://' + process.env.MONGO_PORT_27017_TCP_ADDR + ':27017/cadastr-jogo-api';
+var mongoaddr = 'mongodb://' + process.env.MONGO_PORT_27017_TCP_ADDR + ':27017/cadastro-jogo-api';
 console.log(mongoaddr);
 mongo.connect(mongoaddr);
 

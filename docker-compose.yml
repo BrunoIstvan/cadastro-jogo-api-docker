@@ -5,7 +5,8 @@ mongo:
   volumes:
     - './data:/data/db'
 api:
-  build: .
+  #build: .
+  image: brunoistvan/cadastro_jogo_api 
   command:  bash -c "npm install; nodemon app.js --color=always"
   ports:
     - "8081:8081"
